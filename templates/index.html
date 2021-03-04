@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanic Survival Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+</head>
+
+
+<body>
+    <nav class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+
+            <div class=" col-md-6">
+                <h3 class="text-center">Text Gen</h3>
+                <form action="{{ url_for('predict')}}" method="POST">
+                    <div class="form-group">
+                        <label>Text: </label>
+                        <textarea type="text" class="form-control" name="text" required="required"></textarea>
+                    </div>
+                    <label>Number of words</label>
+                    <input type="number" class='form-control' name="words" min="1" max="100" required="required">
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                    </div>
+
+
+                </form>
+                <br>
+                <br>
+                <h4>{{ prediction_text }}</h4>
+               
+            </div>
+        </div>
+    </nav>
+</body>
+
+<style>
+    .col-md-6 {
+        margin: 20px;
+        background-image: linear-gradient(#CCCCFF, #FF99FF);
+        color: black;
+
+    }
+</style>
+<style>
+    body {
+        background-image: url('https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F877330410%2F960x0.jpg%3Ffit%3Dscale');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+</style>
+
+</html>
